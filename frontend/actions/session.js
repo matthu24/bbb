@@ -1,4 +1,4 @@
-import { postUser, postSession, deleteSession } from '../utils/session';
+import { postUser, postSession, deleteSession } from '../util/session';
 
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -9,7 +9,7 @@ const receiveCurrentUser= currentUser => ({
   currentUser
 })
 
-const receiveSessionErrors = errors => ({
+const receiveErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
 });
