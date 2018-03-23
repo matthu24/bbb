@@ -1,4 +1,4 @@
-import {fetchBenches} from '../util/bench';
+import {fetchAllBenches} from '../util/bench';
 
 export const RECEIVE_BENCHES = 'RECEIVE_BENCHES';
 
@@ -8,5 +8,5 @@ const receiveBenches = (benches) => ({
 });
 
 export const fetchBenches = () => dispatch => (
-  fetchBenches().then(benches => dispatch(receiveBenches(benches)));
-}
+  fetchAllBenches().then(benches => dispatch(receiveBenches(benches)))
+)
