@@ -7,6 +7,9 @@ import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
+  window.dispatch = store.dispatch;
+window.getState = store.dispatch;
+window.fetchBenches = fetchBenches;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
