@@ -4,6 +4,10 @@ class Api::BenchesController < ApplicationController
     @benches = Bench.all
   end
 
+  def show
+    @bench = Bench.find(params[:id])
+  end
+
 
   def create
     @bench = Bench.new(bench_params)
