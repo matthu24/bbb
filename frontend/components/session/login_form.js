@@ -13,6 +13,8 @@ class Login extends React.Component{
 
   }
 
+  //when new props are received, the loggedIn prop will change, this.props.history.push redirects
+  //user to '/'
   componentWillReceiveProps(newProps){
     if(newProps.loggedIn){
       this.props.history.push('/')
@@ -32,7 +34,7 @@ class Login extends React.Component{
   }
 
   render(){
-    console.log(this.state.password)
+    // console.log(this.state.password)
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -45,4 +47,5 @@ class Login extends React.Component{
   }
 }
 
+//You can get access to the history object's properties and the closest <Route>'s match via the withRouter higher-order component. withRouter will pass updated match, location, and history props to the wrapped component whenever it renders.
 export default withRouter(Login);

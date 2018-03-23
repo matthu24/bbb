@@ -1,18 +1,18 @@
-import {logout} from '../../actions/session';
-import {connect} from 'react-redux';
-import Greeting from './greeting';
-
-const mapStateToProps = state => ({
-  currentUser: state.session.currentUser,
-
-});
+import React from 'react';
+import { connect } from 'react-redux';
+import { signup } from '../../actions/session';
+import Signup from './signup';
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  signup: formUser => dispatch(signup(formUser))
 });
 
+const mapStateToProps = state => ({
+  loggedIn: Boolean(state.session.currentUser),
+  errors: state.errors
+});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Greeting);
+)(Signup);

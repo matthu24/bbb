@@ -17,6 +17,7 @@ class Greeting extends React.Component{
       <div>
         hi {this.props.currentUser.username}
         <button onClick={this.props.logout}>logout</button>
+        <Link to='/trick'>Trick page</Link>
       </div>
     ) : (
       <div>
