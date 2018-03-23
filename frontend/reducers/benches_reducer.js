@@ -1,4 +1,3 @@
-
 import {RECEIVE_BENCHES} from '../actions/bench';
 import merge from 'lodash/merge';
 
