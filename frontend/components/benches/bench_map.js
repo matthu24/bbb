@@ -1,17 +1,20 @@
 import React from 'react';
-
+import MarkerManager from '../../util/marker_manager';
 
 const mapOptions = {
-center: {
-  lat: 37.773972,
-  lng: -122.431297
-}, // San Francisco coords
-zoom: 13
+  center: {
+    lat: 37.773972,
+    lng: -122.431297
+  }, // San Francisco coords
+  zoom: 13
 };
+
+// const fourBarrel = {
+//   lat: 37.767019, lng: -122.421961
+// }
 
 class BenchMap extends React.Component{
   constructor(props){
-
     super(props)
   }
 
@@ -25,9 +28,18 @@ class BenchMap extends React.Component{
    //
   //  // wrap the mapDOMNode in a Google Map
   //  this.map = new google.maps.Map(this.mapNode, mapOptions);
-  const map = this.refs.map;
+
+
+  // const map = this.refs.map;
+  const map = document.getElementById('map-container')
   this.map = new google.maps.Map(map, mapOptions);
 
+  this.MarkerManager = new MarkerManager(this.map);
+  this.MarkerManager.updateMarkers(this.props.benches);
+  }
+
+  componentDidUpdate(){
+    this.MarkerManager.updateMarkers(this.props.benches);
   }
 
   render(){

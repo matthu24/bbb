@@ -6,7 +6,7 @@ const Search = props => {
     // div containing a BenchMap and BenchIndex.
     return(
       <div>
-        <BenchMap/>
+        <BenchMap benches={props.benches}/>
         <BenchesIndex fetchBenches={props.fetchBenches} benches={props.benches}/>
       </div>
     )

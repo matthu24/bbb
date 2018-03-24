@@ -13,9 +13,10 @@ class BenchesIndex extends React.Component{
   render(){
     return(
       <div>
+        <h2>Places</h2>
         <ul>
         {
-          this.props.benches.map((bench,id) => <BenchIndexItem bench={bench} key={id}/>)
+          Object.values(this.props.benches).map((bench,id) => <BenchIndexItem bench={bench} key={id}/>)
         }
         </ul>
       </div>

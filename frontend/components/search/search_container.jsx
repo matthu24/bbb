@@ -5,7 +5,7 @@ import Search from './search';
 import {fetchBenches} from '../../actions/bench';
 
 const mapStateToProps = state => ({
-  benches: Object.values(state.entities.benches)
+  benches: state.entities.benches
 })
 
 const mapDispatchToProps = dispatch => ({

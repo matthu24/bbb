@@ -19,3 +19,7 @@
   height: 500px;
   display: block;
 }
+
+li{
+  list-style: none;
+}
